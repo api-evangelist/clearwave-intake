@@ -1,0 +1,122 @@
+aid: clearwave-intake
+url: https://raw.githubusercontent.com/api-evangelist/clearwave-intake/refs/heads/main/apis.yml
+name: Clearwave
+kind: company
+description: Clearwave is a patient revenue-cycle and self-service engagement platform
+  for healthcare practices, covering online scheduling, self-service registration
+  and intake, multi-factor insurance eligibility verification, and patient payments.
+  Rather than publishing an open developer API, Clearwave connects to more than 50
+  electronic health record (EHR) and practice management (PM) systems - including
+  athenahealth, NextGen, eClinicalWorks, Modernizing Medicine, Veradigm, Nextech,
+  Greenway, and Unlimited Systems - through formal, partner-gated API license and
+  integration agreements. Data such as appointments, patient demographics,
+  eligibility results, and payments flows bidirectionally between Clearwave and the
+  practice's EHR/PM in real time. There is no public, self-service developer portal,
+  OpenAPI definition, or documented public WebSocket API; the API surfaces below are
+  logical capability areas modeled from Clearwave's product documentation, not
+  publicly documented endpoints.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Healthcare
+- Patient Access
+- Revenue Cycle
+- Patient Check-In
+- Insurance Eligibility
+- Scheduling
+- Patient Payments
+- EHR Integration
+- Partner API
+created: '2026-07-05'
+modified: '2026-07-05'
+specificationVersion: '0.19'
+apis:
+- aid: clearwave-intake:clearwave-check-in-api
+  name: Clearwave Check-In API
+  tags:
+  - Patient Check-In
+  - Registration
+  - Intake
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.clearwaveinc.com/patient-check-in-system/
+  endpointsModeled: true
+  properties:
+  - url: https://www.clearwaveinc.com/patient-check-in-system/
+    type: Documentation
+  description: Self-service patient check-in and registration - kiosk, tablet, and
+    mobile intake that captures demographics, consent forms, and identity, then
+    writes the completed registration back to the practice's EHR/PM. Modeled
+    capability area; access is partner-gated and no public endpoints are documented.
+- aid: clearwave-intake:clearwave-eligibility-api
+  name: Clearwave Eligibility API
+  tags:
+  - Insurance Eligibility
+  - Verification
+  - Benefits
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.clearwaveinc.com/health-insurance-eligibility-verification/
+  endpointsModeled: true
+  properties:
+  - url: https://www.clearwaveinc.com/health-insurance-eligibility-verification/
+    type: Documentation
+  description: Multi-factor insurance eligibility and benefits verification run
+    automatically as part of check-in, returning coverage status, plan details, and
+    patient responsibility. Modeled capability area; access is partner-gated and no
+    public endpoints are documented.
+- aid: clearwave-intake:clearwave-scheduling-api
+  name: Clearwave Scheduling API
+  tags:
+  - Scheduling
+  - Appointments
+  - Booking
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.clearwaveinc.com/patient-scheduling/
+  endpointsModeled: true
+  properties:
+  - url: https://www.clearwaveinc.com/patient-scheduling/
+    type: Documentation
+  description: Online and self-service appointment scheduling where every booking,
+    cancellation, and reschedule syncs automatically to the practice management
+    system and EHR. Modeled capability area; access is partner-gated and no public
+    endpoints are documented.
+- aid: clearwave-intake:clearwave-patients-api
+  name: Clearwave Patients API
+  tags:
+  - Patients
+  - Demographics
+  - Sync
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.clearwaveinc.com/integrations/
+  endpointsModeled: true
+  properties:
+  - url: https://www.clearwaveinc.com/integrations/
+    type: Documentation
+  description: Bidirectional patient demographic and record synchronization between
+    Clearwave and 50+ EHR/PM systems, keeping patient data consistent across the
+    practice's systems in real time. Modeled capability area; access is partner-gated
+    and no public endpoints are documented.
+- aid: clearwave-intake:clearwave-payments-api
+  name: Clearwave Payments API
+  tags:
+  - Patient Payments
+  - Point of Service
+  - Revenue Cycle
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.clearwaveinc.com/patient-engagement-platform/
+  endpointsModeled: true
+  properties:
+  - url: https://www.clearwaveinc.com/patient-engagement-platform/
+    type: Documentation
+  description: Point-of-service and self-service patient payment capture tied to
+    eligibility-derived patient responsibility, posting balances and payments back
+    to the practice's revenue-cycle systems. Modeled capability area; access is
+    partner-gated and no public endpoints are documented.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/clearwave-corporation
+- type: Website
+  url: https://www.clearwaveinc.com/
+- type: Documentation
+  url: https://www.clearwaveinc.com/integrations/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

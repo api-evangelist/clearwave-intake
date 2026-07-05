@@ -1,0 +1,99 @@
+aid: clearwave-intake
+name: Clearwave
+review:
+  question: Does Clearwave expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-05'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Clearwave does not publish any public API -
+    REST or otherwise - so there is no documented public transport of any kind to
+    model, and specifically no server-push (WebSocket or SSE) surface. Clearwave's
+    integrations are delivered through partner-gated, licensed connections into
+    EHR/PM systems, not through a public developer API. Modeling an AsyncAPI would
+    require fabricating endpoints, which is out of scope for an honest review.
+findings:
+  summary: |
+    Clearwave does not publish a documented public WebSocket API. In fact,
+    Clearwave does not publish an open, self-service developer API of any kind.
+    Clearwave is a patient revenue-cycle and self-service engagement platform
+    (scheduling, self-service registration/check-in, multi-factor insurance
+    eligibility verification, and patient payments) for healthcare practices. Its
+    integration model is explicitly partner-gated: Clearwave states it "has formal
+    application program interface (API) license or partnership agreements with the
+    following leading electronic health record companies," and it connects to more
+    than 50 EHR/PM systems (athenahealth, NextGen, eClinicalWorks, Modernizing
+    Medicine, Veradigm, Nextech, Greenway, Unlimited Systems, and others). There is
+    no public developer portal, no downloadable OpenAPI, no published base URL, no
+    self-service key issuance, and no documented WebSocket (ws:// or wss://)
+    endpoint. Pricing is quote-based (contact sales).
+  accessModel: |
+    Partner-gated / licensed. To integrate you must engage Clearwave directly and
+    enter a formal API license or partnership agreement, typically brokered through
+    the EHR/PM vendor relationship. There is no public onboarding path. A provider
+    portal (secure.clearwaveinc.com/ProviderPortal) and product-oriented Confluence
+    documentation exist, but these are operational/product resources, not a public
+    developer API reference.
+  publicApi: false
+  openSource: |
+    None found. Clearwave is closed, commercial SaaS. No public GitHub organization
+    or open-source components were located.
+  transports:
+    - protocol: Partner Integration (licensed)
+      scheme: https
+      documented: false
+      note: EHR/PM data exchange via formal, partner-gated API license/partnership agreements. No public specification or base URL is published.
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: No public REST API reference, OpenAPI, or base URL is published for third-party developers.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in Clearwave's public materials as of the review date.
+  endpointsConfirmedRest: []
+  endpointsModeled: true
+  modeledCapabilityAreas:
+    - Check-In (self-service registration/intake to EHR/PM)
+    - Eligibility (multi-factor insurance eligibility and benefits verification)
+    - Scheduling (self-service booking synced to PM/EHR)
+    - Patients (bidirectional demographic/record sync across 50+ EHR/PM systems)
+    - Payments (point-of-service patient payment capture posted to revenue cycle)
+  pricing: |
+    Quote-based / contact sales. Third-party listings estimate roughly
+    $300-$800/month plus implementation and onboarding fees, customized by practice
+    size, patient volume, and selected features. No public price list or usage
+    tiers are published, so no Plans, RateLimits, or FinOps artifacts were created.
+sources:
+  - url: https://www.clearwaveinc.com/
+    type: Website
+    note: Product overview - scheduling, registration, check-in, eligibility, payments.
+  - url: https://www.clearwaveinc.com/integrations/
+    type: Documentation
+    note: States formal API license/partnership agreements with EHR vendors; 50+ EHR/PM integrations. No public developer API.
+  - url: https://www.clearwaveinc.com/health-insurance-eligibility-verification/
+    type: Documentation
+    note: Multi-factor eligibility verification product page.
+  - url: https://www.clearwaveinc.com/patient-scheduling/
+    type: Documentation
+    note: Self-service scheduling that syncs bookings/cancellations to the PMS/EHR.
+  - url: https://www.clearwaveinc.com/patient-check-in-system/
+    type: Documentation
+    note: Self-service patient check-in and registration product page.
+  - url: https://www.clearwaveinc.com/blog/clearwave-and-unlimited-systems-expand-functionality-supported-by-api-connectivity-with-unlimited-financials/
+    type: Blog
+    note: Example of API connectivity delivered via a specific vendor partnership (Unlimited Financials), not a public API.
+  - url: https://www.linkedin.com/company/clearwave-corporation
+    type: LinkedIn
+    note: Company profile - Atlanta, GA; patient revenue platform; 5,000+ locations, 11,000+ providers.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and Clearwave publishes no public API at
+    all - integration is partner-gated via licensed EHR/PM agreements. No AsyncAPI
+    document was created because there is no documented public server-push transport
+    (or any public transport) on Clearwave's own API to model. The apis.yml entry
+    documents the provider honestly as partner-gated, with logical capability areas
+    marked endpointsModeled: true rather than fabricated endpoints.
