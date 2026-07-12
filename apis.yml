@@ -111,6 +111,8 @@ apis:
     to the practice's revenue-cycle systems. Modeled capability area; access is
     partner-gated and no public endpoints are documented.
 common:
+- type: DomainSecurity
+  url: security/clearwave-intake-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/clearwave-corporation
 - type: Website
