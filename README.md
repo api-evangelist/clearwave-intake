@@ -1,4 +1,4 @@
-# Clearwave (clearwave-intake)
+# Clearwave
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,81 +64,89 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Clearwave is a patient revenue-cycle and self-service engagement platform for healthcare practices, covering online scheduling, self-service registration and intake, multi-factor insurance eligibility verification, and patient payments. The platform powers self-service patient check-in across kiosk, tablet, and mobile, and is used by thousands of multi-specialty healthcare locations nationwide.
+Clearwave is a patient revenue-cycle and self-service engagement platform for healthcare practices, covering online scheduling, self-service registration and intake, multi-factor insurance eligibility verification, and patient payments. Rather than publishing an open developer API, Clearwave connects to more than 50 electronic health record (EHR) and practice management (PM) systems - including athenahealth, NextGen, eClinicalWorks, Modernizing Medicine, Veradigm, Nextech, Greenway, and Unlimited Systems - through formal, partner-gated API license and integration agreements. Data such as appointments, patient demographics, eligibility results, and payments flows bidirectionally between Clearwave and the practice's EHR/PM in real time. There is no public, self-service developer portal, OpenAPI definition, or documented public WebSocket API; the API surfaces below are logical capability areas modeled from Clearwave's product documentation, not publicly documented endpoints.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/clearwave-intake/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/clearwave-intake/refs/heads/main/apis.yml)
+**Areas:** Healthcare · Patient Access · Revenue Cycle · Patient Check-In · Insurance Eligibility · Scheduling · Patient Payments · EHR Integration · Partner API
 
-## Access Model — Partner-Gated (No Public Developer API)
+## Clearwave on APIs.io
 
-Clearwave does **not** publish an open, self-service developer API. There is no public developer portal, no downloadable OpenAPI definition, and no documented public WebSocket API. Instead, Clearwave connects to more than 50 electronic health record (EHR) and practice management (PM) systems through **formal, partner-gated API license and integration agreements**. As Clearwave states on its integrations page, it "has formal application program interface (API) license or partnership agreements with the following leading electronic health record companies."
+Everything profiled for Clearwave is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/clearwave-intake/](https://apis.io/providers/clearwave-intake/)** — or go straight to one of the APIs or properties below.
 
-Integration partners include athenahealth, NextGen Healthcare, eClinicalWorks, Modernizing Medicine (ModMed), Veradigm, Nextech, Greenway, Compulink, AdvancedMD, and Unlimited Systems, among others. Appointments, patient demographics, eligibility results, and payments flow bidirectionally between Clearwave and the practice's EHR/PM in real time, with no manual re-entry.
+### APIs (5)
 
-To integrate with Clearwave you must engage their team directly; there is no public sign-up or key issuance. Pricing is quote-based (contact sales), typically structured around practice size, patient volume, and selected engagement features, plus implementation and onboarding fees.
+- [Clearwave Check-In API](https://apis.io/apis/clearwave-intake/clearwave-check-in-api/) — Self-service patient check-in and registration - kiosk, tablet, and mobile intake that captures demographics, consent forms, and identity, then writes the…
+- [Clearwave Eligibility API](https://apis.io/apis/clearwave-intake/clearwave-eligibility-api/) — Multi-factor insurance eligibility and benefits verification run automatically as part of check-in, returning coverage status, plan details, and patient…
+- [Clearwave Scheduling API](https://apis.io/apis/clearwave-intake/clearwave-scheduling-api/) — Online and self-service appointment scheduling where every booking, cancellation, and reschedule syncs automatically to the practice management system and…
+- [Clearwave Patients API](https://apis.io/apis/clearwave-intake/clearwave-patients-api/) — Bidirectional patient demographic and record synchronization between Clearwave and 50+ EHR/PM systems, keeping patient data consistent across the practice's…
+- [Clearwave Payments API](https://apis.io/apis/clearwave-intake/clearwave-payments-api/) — Point-of-service and self-service patient payment capture tied to eligibility-derived patient responsibility, posting balances and payments back to the…
 
-The APIs listed below are **logical capability areas modeled** from Clearwave's public product documentation. They are marked `endpointsModeled: true` and do **not** represent publicly documented endpoints, base URLs, or request/response schemas. No OpenAPI, Postman collection, plans, rate-limit, or FinOps artifacts are included because no public, sourced technical surface exists to describe.
+### Published properties
 
-## Tags
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- Healthcare
-- Patient Access
-- Revenue Cycle
-- Patient Check-In
-- Insurance Eligibility
-- Scheduling
-- Patient Payments
-- EHR Integration
-- Partner API
+#### Security (1)
 
-## Timestamps
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Created:** 2026-07-05
-- **Modified:** 2026-07-05
+- [Clearwave Intake Domain Security](https://apis.io/security/clearwave-intake/clearwave-intake-domain-security/)
 
-## APIs (Modeled Capability Areas)
+## Where to find this API
 
-### Clearwave Check-In API
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-Self-service patient check-in and registration — kiosk, tablet, and mobile intake that captures demographics, consent forms, and identity, then writes the completed registration back to the practice's EHR/PM.
-
-- **Human URL:** [https://www.clearwaveinc.com/patient-check-in-system/](https://www.clearwaveinc.com/patient-check-in-system/)
-- **Endpoints:** Modeled (partner-gated; no public endpoints documented)
-
-### Clearwave Eligibility API
-
-Multi-factor insurance eligibility and benefits verification run automatically as part of check-in, returning coverage status, plan details, and patient responsibility.
-
-- **Human URL:** [https://www.clearwaveinc.com/health-insurance-eligibility-verification/](https://www.clearwaveinc.com/health-insurance-eligibility-verification/)
-- **Endpoints:** Modeled (partner-gated; no public endpoints documented)
-
-### Clearwave Scheduling API
-
-Online and self-service appointment scheduling where every booking, cancellation, and reschedule syncs automatically to the practice management system and EHR.
-
-- **Human URL:** [https://www.clearwaveinc.com/patient-scheduling/](https://www.clearwaveinc.com/patient-scheduling/)
-- **Endpoints:** Modeled (partner-gated; no public endpoints documented)
-
-### Clearwave Patients API
-
-Bidirectional patient demographic and record synchronization between Clearwave and 50+ EHR/PM systems, keeping patient data consistent across the practice's systems in real time.
-
-- **Human URL:** [https://www.clearwaveinc.com/integrations/](https://www.clearwaveinc.com/integrations/)
-- **Endpoints:** Modeled (partner-gated; no public endpoints documented)
-
-### Clearwave Payments API
-
-Point-of-service and self-service patient payment capture tied to eligibility-derived patient responsibility, posting balances and payments back to the practice's revenue-cycle systems.
-
-- **Human URL:** [https://www.clearwaveinc.com/patient-engagement-platform/](https://www.clearwaveinc.com/patient-engagement-platform/)
-- **Endpoints:** Modeled (partner-gated; no public endpoints documented)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/clearwave-corporation)
 - [Website](https://www.clearwaveinc.com/)
 - [Documentation](https://www.clearwaveinc.com/integrations/)
+- [Blog](https://www.clearwaveinc.com/blog/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 7.5** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 0.0 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 4.7** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/clearwave-intake/](https://apis.io/providers/clearwave-intake/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Clearwave: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/clearwave-intake/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
